@@ -1,0 +1,68 @@
+{
+  "name": "tree-sitter-topaz",
+  "version": "5.21.0",
+  "license": "Apache-2.0",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "binding.gyp",
+    "bindings/node/**",
+    "grammar.js",
+    "queries/**",
+    "src/**",
+    "tree-sitter.json"
+  ],
+  "scripts": {
+    "install": "node-gyp-build",
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "test:queries": "node scripts/check-queries.mjs",
+    "test:syntax": "node scripts/check-521.cjs",
+    "test:boundaries": "node scripts/check-review-boundaries.cjs",
+    "parse:acceptance": "node scripts/parse-acceptance.mjs",
+    "prepack": "tree-sitter generate",
+    "package:audit": "node scripts/package-audit.mjs"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.10"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.topaz",
+      "file-types": [
+        "tpz"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "locals": "queries/locals.scm",
+      "indents": "queries/indents.scm"
+    }
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "tree-sitter",
+    "topaz",
+    "grammar",
+    "syntax-highlighting"
+  ],
+  "type": "commonjs",
+  "description": "Tree-sitter grammar and editor queries for Topaz 5.21.",
+  "homepage": "https://topaz.ooo"
+}
