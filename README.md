@@ -1,6 +1,6 @@
 # tree-sitter-topaz
 
-Tree-sitter grammar for the Topaz programming language. It gives editors and tools a concrete syntax tree for `.tpz` files, together with highlight, locals, indent and injection queries.
+Tree-sitter grammar for Topaz, a general-purpose programming language with typesetting built in. It gives editors and tools a concrete syntax tree for `.tpz` files, together with highlight, locals, indent and injection queries.
 
 ## What it follows
 
